@@ -6,7 +6,7 @@ last_dgt = temp % 10
 if number < 0:
     temp = -1 * number
     last_dgt = -1 * (temp % 10)
-    output = f"Last digit of {number:d} is {last_dgt:d} "
+output = f"Last digit of {number:d} is {last_dgt:d} "
 if last_dgt > 5:
     output = output + "and is greater than 5"
 else:
