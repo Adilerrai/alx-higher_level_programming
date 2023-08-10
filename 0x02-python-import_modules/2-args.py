@@ -17,8 +17,6 @@ def argument_number(n):
 
 
 if __name__ == "__main__":
-    n = len(argv) -1
-             
+    n = len(argv) - 1
     argument_number(n)
     argv_list(n)
-
