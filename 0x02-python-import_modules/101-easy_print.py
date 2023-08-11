@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exec("for c in '#pythoniscool': __import__('sys').stdout.write(c)\n")
+__import__("os").write(1, "#pythoniscool\n".encode("UTF-8"))
