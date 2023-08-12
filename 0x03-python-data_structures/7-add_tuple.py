@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def tuple_to_list(tuple_i):
+def tuple_to_list(tuple_i=()):
     temp_list = list(tuple_i)
     n = len(temp_list)
     while n < 2:
