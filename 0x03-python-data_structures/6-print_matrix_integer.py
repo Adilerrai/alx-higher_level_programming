@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-
-def print_matrix_integer(matrix=[[]]):
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            print("{:d}".format(matrix[i][j]), end=' ')
-            if j != (len(matrix[i]) - 1):
-                print("", end='')
-        print('')
+def print_matrix_integer(matrix=None):
+    if matrix is not None:
+        for row in matrix:
+            for i in range(len(row)):
+                if i < len(row) - 1:
+                    print("{:d} ".format(row[i]), end='')
+                else:
+                    print("{:d}".format(row[i]))
