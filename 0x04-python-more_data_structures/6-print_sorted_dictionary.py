@@ -2,7 +2,6 @@
 
 
 def print_sorted_dictionary(a_dictionary):
-    if is not None:
-        for key in sorted(a_dictionary.keys()):
-            print(f"{key} : {a_dictionary[key]}")
-
+    if a_dictionary is not None:
+        for key in sorted(a_dictionary):
+            print("{}: {}".format(key, a_dictionary[key]))
