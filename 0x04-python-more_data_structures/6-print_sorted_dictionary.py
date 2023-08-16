@@ -3,8 +3,6 @@
 
 def print_sorted_dictionary(a_dictionary):
     if is not None:
-        new_list = list(a_dictionnary.keys())
-        new_list.sort()
-    for key in list_temp:
-        print(f"{key} : {a_dictionary[key]}")
+        for key in sorted(a_dictionary.keys()):
+            print(f"{key} : {a_dictionary[key]}")
 
