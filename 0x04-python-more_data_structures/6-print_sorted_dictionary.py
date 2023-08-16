@@ -3,4 +3,4 @@
 def print_sorted_dictionary(a_dictionary):
     if a_dictionary is not None:
         for i in sorted(a_dictionary):
-            print("{}:{}".format(key, a_dictionary[key]))
+            print("{}: {}".format(key, a_dictionary[key]))
