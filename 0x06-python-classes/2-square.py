@@ -6,7 +6,7 @@ class Square:
     """Class Object creation"""
     def __init__(self, size=0):
         """creation of object"""
-        if size is not int:
+        if not isinstance(size, int)
             """Check for type"""
             raise TypeError("TypeError")
         if size < 0:
