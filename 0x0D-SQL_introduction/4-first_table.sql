@@ -1,5 +1,2 @@
 -- Creating the first table of a DB 
-CREATE TABLE first_table(
-	id int,
-	name VARCHAR(256),
-);
+CREATE TABLE IF NOT EXIST first_table(id int, name VARCHAR(256));
