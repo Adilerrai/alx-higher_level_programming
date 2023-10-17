@@ -1,2 +1,2 @@
 -- printing all tables of DB 
-SELECT * FROM DATABASE;
+SHOW TABLE;
