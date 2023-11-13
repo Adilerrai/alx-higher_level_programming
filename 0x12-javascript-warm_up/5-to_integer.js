@@ -1,8 +1,8 @@
 #!/usr/bin/node
 const process = require('process');
-const args = process.argv
-const newList = args.slice(2,)
-const intayger = Number(newList[0]);
+const args = process.argv;
+const newList = args.slice(2,);
+const intayger = Math.trunc(Number(newList[0]));
 if(isNaN(intayger)) {
 	console.log('Not a number');
 }else{
