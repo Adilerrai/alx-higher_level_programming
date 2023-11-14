@@ -7,7 +7,10 @@ if (isNaN(Number(NewList[0])) || Number(NewList[0]) < 0) {
 } else if (Number(NewList[0]) > 0) {
   let output = '';
   for (let i = 0; i < Number(NewList[0]); i++) {
-    output += 'X';
+    for (let j = 0; j < Number(NewList[0]); j++) {
+      output += 'X';
+    }
+    console.log(output.trim());
+    output = '';
   }
-  console.log(output.trim());
 }
