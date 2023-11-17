@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
-db = MySQLdb.connect(user="root", password="Viveraja123@",
+db = MySQLdb.connect(host="localhost", port=3306, user="root", password="Viveraja123@",
                      database="hbtn_0e_0_usa")
 cursor = db.cursor()
 cursor.execute("SELECT * FROM states ")
