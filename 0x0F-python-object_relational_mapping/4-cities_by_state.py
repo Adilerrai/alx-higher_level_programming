@@ -11,17 +11,17 @@ if __name__ == "__main__":
         sys.exit(1)
 
         # Get MySQL connection parameters from command line arguments
-    username, password, database = sys.argv[1:]
+        username, password, database = sys.argv[1:]
 
         # Connect to MySQL server running on localhost at port 3306
-    db = MySQLdb.connect(host="localhost", port=3306,
+        db = MySQLdb.connect(host="localhost", port=3306,
                              user=username, passwd=password, db=database)
 
         # Create a cursor object using the cursor() method
-    cursor = db.cursor()
+        cursor = db.cursor()
 
         # Execute a single query to retrieve the required data
-    cursor.execute(
+        cursor.execute(
             """
                 SELECT cities.id, cities.name, states.na
                 FROM cities
@@ -31,12 +31,12 @@ if __name__ == "__main__":
         )
 
         # Fetch all the rows using the fetchall() method
-    rows = cursor.fetchall()
+        rows = cursor.fetchall()
 
         # Display the results as specified
-    for row in rows:
-        print(row)
+        for row in rows:
+            print(row)
 
             # Close the cursor and database connection
-    cursor.close()
-    db.close()
+        cursor.close()
+        db.close()
