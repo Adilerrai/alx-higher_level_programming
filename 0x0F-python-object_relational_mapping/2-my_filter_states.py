@@ -16,7 +16,7 @@ def list_stat(username, password, database, userInput):
                               passwd=password, db=database)
     cursor = connect.cursor()
     name = userInput
-    query = "SELECT * FROM states WHERE name LIKE %s"
+    query = "SELECT * FROM states WHERE name = %s"
     cursor.execute(query, (name,))
     rows = cursor.fetchall()
     for row in rows:
