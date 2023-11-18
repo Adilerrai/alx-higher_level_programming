@@ -11,6 +11,9 @@ def list_stat(username, password, database):
     password: mysql password
     database: mysql database
     """
+    if len(sys.argv) != 4:
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        sys.exit(1)
 
     connect = MySQLdb.connect(host="127.0.0.1", port=3306, user=username,
                               passwd=password, db=database)
