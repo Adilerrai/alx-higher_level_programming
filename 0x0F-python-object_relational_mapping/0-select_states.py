@@ -12,7 +12,7 @@ def list_stat(username, password, database):
     database: mysql database
     """
 
-    connect = MySQLdb.connect(host="127.0.0.1", port=3306, user=username,
+    connect = MySQLdb.connect(host="localhost", port=3306, user=username,
                               passwd=password, db=database)
     cursor = connect.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
