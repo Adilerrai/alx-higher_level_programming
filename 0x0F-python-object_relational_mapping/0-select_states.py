@@ -1,15 +1,16 @@
 #!/usr/bin/python3
+"""Script that list all state """
 import MySQLdb
 import sys
 
 
 def list_stat(username, password, database):
     """lists all states from the database hbtn_0e_0_usa.
-        Ags:
-                username: mysql username
-                        password: mysql password
-                                database: mysql database
-                                """
+    Ags:
+    username: mysql username
+    password: mysql password
+    database: mysql database
+    """
 
     connect = MySQLdb.connect(host="localhost", port=3306, user=username,
                               passwd=password, db=database)
