@@ -17,12 +17,12 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state_name = sys.argv[4]
+    new_state_name = 'Louisiana'
 
 
         # Create a new State instance and add it to the session
     new_state = State(name=new_state_name)
     session.add(new_state)
     session.commit()
-    print("{}".format(new_state.id))
+    print(new_state.id)
     session.close()
