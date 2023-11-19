@@ -1,22 +1,21 @@
 #!/usr/bin/python3
-from sqlalchemy import Column, Integer, String, Table, MetaData
-from sqlalchemy import create_engine
+
+from sqlalchemy import create_engine, String, Integer, Column
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 import sys
+from model_state import Base, State
 
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    from sqlalchemy.ext.declarative import declarative_base
-    Base = declarative_base()
+if __name__ == '__main__':
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           )
 
-    meta = MetaData()
-    states = Table('states', meta, autoload_with=engine)
-
-    from sqlalchemy.orm import sessionmaker
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(states).all()
+    states = session.query(State).order_by(State.id).all()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
 
-    for row in result:
-        print(row)
+        session.close()
