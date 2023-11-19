@@ -14,15 +14,9 @@ if __name__ == '__main__':
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    if len(sys.argv) == 5:
-        filter_name = sys.argv[4]
-        states = session.query(State).filter(State.name.like(
-            '%{}%'.format(filter_name))).order_by(State.id).all()
-    else:
-            # If sys.argv[4] is not provided, fetch all states
-        states = session.query(State).order_by(State.id).all()
+    states = session.query(State).order_by(State.id).all()
 
-    for state in states:
+    for state in range(0, 1):
         print("{}: {}".format(state.id, state.name))
 
     session.close()
