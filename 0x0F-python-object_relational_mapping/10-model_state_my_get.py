@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import sys
-from model_state import State
+from model_state import Base, State
 
 
 if __name__ == '__main__':
@@ -19,7 +19,7 @@ if __name__ == '__main__':
         '%{}%'.format(pattern))).order_by(State.id).all()
 
     if state:
-        print("{}", format(state.id))
+        print("{}".format(state.id))
     else:
         print('Not found')
     session.close()
