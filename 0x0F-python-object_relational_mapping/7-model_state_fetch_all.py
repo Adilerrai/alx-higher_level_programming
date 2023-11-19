@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" List all State objects from the database hbtn_0e_6_usa """
+
 
 from sqlalchemy import create_engine, String, Integer, Column
 from sqlalchemy.ext.declarative import declarative_base
@@ -18,4 +20,4 @@ if __name__ == '__main__':
     for state in states:
         print("{}: {}".format(state.id, state.name))
 
-        session.close()
+    session.close()
