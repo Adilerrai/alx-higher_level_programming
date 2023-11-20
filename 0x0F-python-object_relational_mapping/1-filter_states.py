@@ -18,7 +18,8 @@ def list_stat(username, password, database):
     cursor.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC")
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
+        if row.name == 'N':
+            print(row)
     cursor.close()
     connect.close()
 
