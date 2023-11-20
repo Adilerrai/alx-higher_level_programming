@@ -16,7 +16,8 @@ def list_stat(username, password, database):
                               passwd=password, db=database)
     cursor = connect.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE BINARY SUBSTRING(name, 1, 1) = 'N' ORDER BY id ASC;")
+        "SELECT * FROM states WHERE BINARY\
+        SUBSTRING(name, 1, 1) = 'N' ORDER BY id ASC;")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
