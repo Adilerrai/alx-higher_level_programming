@@ -15,11 +15,10 @@ def list_stat(username, password, database):
     connect = MySQLdb.connect(host="localhost", port=3306, user=username,
                               passwd=password, db=database)
     cursor = connect.cursor()
-    cursor.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name like 'N%' COLLATE utf8_general_ci  ORDER BY id ASC")
     rows = cursor.fetchall()
     for row in rows:
-        if row.name == 'N':
-            print(row)
+        print(row)
     cursor.close()
     connect.close()
 
