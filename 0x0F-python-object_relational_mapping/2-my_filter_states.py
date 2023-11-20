@@ -8,7 +8,8 @@ if __name__ == '__main__':
                          password=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name REGEXP '{}' COLLATE utf8mb4_bin ORDER BY id ASC;".format(sys.argv[4]))
+        "SELECT * FROM states WHERE name REGEXP '{}'\
+                COLLATE utf8mb4_bin ORDER BY id ASC;".format(sys.argv[4]))
 
     [print(state) for state in cur.fetchall()]
     cur.close()
