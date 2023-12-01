@@ -9,7 +9,4 @@ if __name__ == "__main__":
     email = sys.argv[2]
     data = {"email": email}
     r = requests.post(url, data=data)
-    if r.text >= 400:
-        print(f"Error code: {r.text}")
-    else:
-        print(r.text)
+    print(r.text)
