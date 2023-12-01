@@ -3,9 +3,6 @@
 import sys
 from urllib.request import urlopen
 with urlopen(sys.argv[1]) as response:
-        body = response
+    x_request_id = response.headers.get('X-Request-Id')
 
-header = body.__dict__['headers']
-for key, val in header.items():
-    if key == 'X-Request-Id':
-        print(val)
+print(x_request_id)
