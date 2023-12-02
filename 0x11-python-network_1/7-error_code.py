@@ -8,5 +8,6 @@ if __name__ == "__main__":
     req = request.get(url)
     if req.stats_code >= 400:
         print(f"Error code: {req.status_code}")
+        ecit()
     else:
         print("index")
